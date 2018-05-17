@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="discre">25dp</dimen>
+    <dimen name="bigNumber">40dp</dimen>
+    <dimen name="marginleft">100sp</dimen>
+    <dimen name="marginbttm">20sp</dimen>
+    <dimen name="title">27dp</dimen>
+    <dimen name="value">18dp</dimen>
+</resources>

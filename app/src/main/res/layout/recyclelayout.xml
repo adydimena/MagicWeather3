@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+
+        <TextView
+            android:id="@+id/forecast"
+            android:layout_width="186dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="@dimen/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.086"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/forecastDescription"
+            android:layout_width="194dp"
+            android:layout_height="109dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/setTemp"
+            android:layout_width="158dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="@dimen/bigNumber"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iconImage"
+            android:layout_width="145dp"
+            android:layout_height="75dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.966"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.944" />
+
+    </android.support.constraint.ConstraintLayout>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:rowCount="5"
+        android:columnCount="2">
+        <TextView
+            android:text="Wind Speed"
+            android:textSize="@dimen/discre"
+            android:layout_marginBottom="@dimen/marginbttm"
+            />
+        <TextView
+            android:id="@+id/windSpeedValue"
+            android:layout_marginLeft="@dimen/marginleft"
+            android:textSize="@dimen/value"
+            />
+        <TextView
+            android:text="Could"
+            android:textSize="@dimen/discre"
+            android:layout_marginBottom="@dimen/marginbttm"
+            />
+        <TextView
+            android:textSize="@dimen/value"
+            android:id="@+id/cloudValue"
+            android:layout_marginLeft="@dimen/marginleft"
+            />
+        <TextView
+
+            android:text="Pressure"
+            android:textSize="@dimen/discre"
+            android:layout_marginBottom="@dimen/marginbttm"
+            />
+        <TextView
+            android:textSize="@dimen/value"
+            android:id="@+id/presurreValue"
+            android:layout_marginLeft="@dimen/marginleft"
+            />
+        <TextView
+            android:text="Huminity"
+            android:textSize="@dimen/discre"
+            android:layout_marginBottom="@dimen/marginbttm"
+            />
+        <TextView
+            android:textSize="@dimen/value"
+            android:id="@+id/huminityValue"
+            android:layout_marginLeft="@dimen/marginleft"
+            />
+        <TextView
+            android:text="SunRise"
+            android:textSize="@dimen/discre"
+            android:layout_marginBottom="@dimen/marginbttm"
+            />
+        <TextView
+            android:textSize="@dimen/value"
+            android:layout_marginLeft="@dimen/marginleft"
+            android:id="@+id/sunRiseValue"
+            />
+
+    </GridLayout>
+
+</LinearLayout>
