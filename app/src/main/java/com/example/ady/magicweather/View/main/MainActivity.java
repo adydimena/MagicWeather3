@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.ady.magicweather.MagicWeather;
@@ -22,6 +23,7 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
     EditText etZip ;
+    ProgressBar progressBar;
     public static final String TAG = MainActivity.class.getCanonicalName();
     @Inject
     MainPresenter mainPresenter;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         // app program logic starts here...
         setNaviBar();
         etZip = findViewById(R.id.etZip);
+        progressBar = findViewById(R.id.progessBar);
     }
 
     @Override
@@ -54,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setItemAnimator(itemAnimator);
             recyclerView.setAdapter(recycleadapter);
+            progressBar.setVisibility(View.GONE);
+        }
+        else{
+            progressBar.setVisibility(View.GONE);
         }
 
     }
@@ -61,12 +68,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     public void setError(String message) {
         String dummy = etZip.getText().toString();
         Toast.makeText(this,message + ". could not find "+ dummy + ".Try again",Toast.LENGTH_LONG).show();
-        etZip.setText(" ");
+        progressBar.setVisibility(View.GONE);
     }
     public void weatherVudo(View view) {
         InputMethodManager mgr = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(etZip.getWindowToken(),0);
         mainPresenter.getWeatherData(etZip.getText().toString());
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     private void setNaviBar() {
